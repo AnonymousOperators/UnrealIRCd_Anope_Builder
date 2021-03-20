@@ -1,0 +1,8 @@
+2021-03-18 23:38:46,561 - bot.py - MainThread - INFO : File logger created; saving logs to /home/gnunix/gorillabot/logs/2338_031821.log.
+2021-03-18 23:38:46,561 - bot.py - MainThread - INFO : Console logger created.
+2021-03-18 23:39:23,458 - bot.py - IO - INFO : Initiating connection.
+2021-03-18 23:39:26,062 - bot.py - IO - WARNING : Tried to get settings for nonexistant channel freenode-connect.
+2021-03-18 23:39:30,398 - bot.py - Executor - INFO : Adding ~dead unaffiliated/dead to bot ops
+2021-03-18 23:39:30,753 - bot.py - MainThread - INFO : Caught KeyboardInterrupt. Shutting down.
+2021-03-18 23:39:31,611 - bot.py - Executor - INFO : No user floof logged in.
+2021-03-18 23:39:32,612 - bot.py - Executor - ERROR : Message 'WHOIS fmgts' failed to send. Shutting down.

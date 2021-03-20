@@ -1,0 +1,85 @@
+#!/usr/bin/bash
+
+########################################################
+# This entire rebuild assumes you are running Debian 9 #
+# it also assumes you are having admins ssh in the vps #
+########################################################
+
+# This file assumes you are reading it, and copying and pasting the commands in a terminal
+# Do not do this as root, it will mess up permissions and be a pain in the ass.
+# Run with sudo as a user.
+
+# We will compile Unrealircd and Anope, then you can move the unrealircd.conf and services.conf files
+# to their respective directories, and it will work. 
+
+# Let's update our shit
+apt update --fix-missing; apt -y upgrade;
+# let's install the first necessary basics r-cran-pkgmaker is for gmake; libssl-dev for ssl
+apt -y install nginx git dnsutils libssl1.1 r-cran-pkgmaker certbot sudo  libssl-dev python3-pip;
+
+cd /home
+mkdir network #This is where we will compile and store our programs (unrealircd, etc)
+cd network
+
+
+#Grab source code for Unrealircd and Anope. The rest are extras
+# Make sure you git these clones 
+git clone https://github.com/unrealircd/unrealircd.git;
+
+git clone https://github.com/AnonymousOperators/Our_VPS.git
+
+git clone https://github.com/matrix-org/matrix-appservice-irc
+
+wget downloads.xiph.org/releases/icecast/icecast-2.4.4.tar.gz
+
+
+# Let's create a SSL certificate, will take a while
+openssl dhparam -out /etc/ssl/certs/dhparam.pem 4096;
+
+# Make dir for ssl tests
+mkdir -p /var/lib/letsencrypt/.well-known;
+chgrp www-data /var/lib/letsencrypt;
+chmod g+s /var/lib/letsencrypt;
+
+# Move files from repo to directories
+
+# conf
+mv /home/Our_VPS/letsencrypt/letsencrypt.conf /etc/nginx/snippets;
+# website conf
+mv /home/Our_VPS/letsencrypt/anonymousoperators.com /etc/nginx/sites-available;
+# ssl conf
+mv /home/Our_VPS/letsencrypt/ssl.conf /etc/nginx/snippets;
+
+
+# symbolic link
+ln -s /etc/nginx/sites-available/anonymousoperators.com /etc/nginx/sites-enabled/;
+
+
+# restart nginx
+systemctl restart nginx;
+
+# SSL test
+certbot certonly --agree-tos --email anonymousoperators@tutanota.com --webroot -w /var/lib/letsencrypt/ -d anonymousoperators.com -d www.anonymousoperators.com;
+
+# remove the old conf, mv the new conf, rename it
+rm -rf /etc/nginx/sites-available/anonymousoperators.com;
+mv /home/Our_VPS/letsencrypt/new-anonymousoperators.com /etc/nginx/sites-available/;
+mv /etc/nginx/sites-available/new-anonymousoperators.com /etc/nginx/sites-available/anonymousoperators.com;
+
+# reload
+systemctl reload nginx;
+
+
+# NOW LET'S SET SSL TO AUTO-RENEW SO WE DON'T HAVE TO REDO THIS FUCKING SHIT
+# move certbot file
+mv /home/Our_VPS/letsencrypt/certbot /etc/cron.d/;
+
+# dry run, if no errors, 100% successful
+certbot renew --dry-run;
+
+
+#Now your got your domain setup with ssl, nginx is installed. Let's setup IRC.
+
+
+
+BOT ADD FreedomFighter FreedomFighter services.legion.network The Freedom Fighter Bot

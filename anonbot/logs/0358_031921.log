@@ -1,0 +1,8 @@
+2021-03-19 03:58:03,465 - bot.py - MainThread - INFO : File logger created; saving logs to /home/gnunix/gorillabot/logs/0358_031921.log.
+2021-03-19 03:58:03,466 - bot.py - MainThread - INFO : Console logger created.
+2021-03-19 03:58:39,883 - bot.py - IO - INFO : Initiating connection.
+2021-03-19 03:58:43,633 - bot.py - Executor - INFO : Joining #legion.
+2021-03-19 03:58:44,636 - bot.py - Executor - INFO : Joining #deadforest.
+2021-03-19 03:58:46,843 - bot.py - Executor - INFO : Adding fluffy all.times to bot ops
+2021-03-19 03:59:00,329 - link.py - Executor - INFO : Retrieving information from the YouTube API for https://www.youtube.com/watch?v=1jDBhdMMhWM.
+2021-03-19 03:59:54,078 - bot.py - MainThread - INFO : Caught KeyboardInterrupt. Shutting down.

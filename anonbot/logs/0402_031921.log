@@ -1,0 +1,7 @@
+2021-03-19 04:02:11,618 - bot.py - MainThread - INFO : File logger created; saving logs to /home/gnunix/gorillabot/logs/0402_031921.log.
+2021-03-19 04:02:11,618 - bot.py - MainThread - INFO : Console logger created.
+2021-03-19 04:02:15,727 - bot.py - IO - INFO : Initiating connection.
+2021-03-19 04:02:19,432 - bot.py - Executor - INFO : Joining #legion.
+2021-03-19 04:02:20,435 - bot.py - Executor - INFO : Joining #deadforest.
+2021-03-19 04:02:22,647 - bot.py - Executor - INFO : Adding fluffy all.times to bot ops
+2021-03-19 04:02:37,945 - link.py - Executor - INFO : Retrieving information from the YouTube API for https://www.youtube.com/watch?v=1jDBhdMMhWM.

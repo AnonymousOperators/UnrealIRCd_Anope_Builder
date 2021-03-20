@@ -1,0 +1,17 @@
+2021-03-19 02:32:58,978 - bot.py - MainThread - INFO : File logger created; saving logs to /home/gnunix/gorillabot/logs/0232_031921.log.
+2021-03-19 02:32:58,978 - bot.py - MainThread - INFO : Console logger created.
+2021-03-19 02:33:08,495 - bot.py - IO - INFO : Initiating connection.
+2021-03-19 02:33:11,992 - bot.py - Executor - INFO : Joining #legion.
+2021-03-19 02:33:12,996 - bot.py - Executor - INFO : Joining #deadforest.
+2021-03-19 02:33:13,998 - bot.py - Executor - INFO : Joining #anonops.
+2021-03-19 02:33:14,999 - bot.py - Executor - INFO : Joining #gnu.
+2021-03-19 02:33:17,212 - bot.py - Executor - INFO : Adding spewforth series.of.tubes to bot ops
+2021-03-19 02:33:19,215 - bot.py - Executor - INFO : Adding fluffy all.times to bot ops
+2021-03-19 02:34:06,064 - link.py - Executor - INFO : Retrieving link for https://google.com.
+2021-03-19 02:34:36,191 - link.py - Executor - INFO : Retrieving link for https://www.youtube.com/watch?v=JGWdw3UJbqI.
+2021-03-19 02:34:40,674 - link.py - Executor - INFO : No title element found.
+2021-03-19 02:34:59,185 - util.py - Executor - INFO : http://c.xkcd.com/random/comic/: Not Found
+2021-03-19 02:34:59,185 - link.py - Executor - ERROR : Couldn't get random xkcd comic.
+2021-03-19 02:47:41,471 - util.py - Executor - INFO : http://c.xkcd.com/random/comic/: Not Found
+2021-03-19 02:47:41,471 - link.py - Executor - ERROR : Couldn't get random xkcd comic.
+2021-03-19 03:25:50,190 - bot.py - MainThread - INFO : Caught KeyboardInterrupt. Shutting down.

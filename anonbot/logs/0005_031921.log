@@ -1,0 +1,17 @@
+2021-03-19 00:05:33,853 - bot.py - MainThread - INFO : File logger created; saving logs to /home/gnunix/gorillabot/logs/0005_031921.log.
+2021-03-19 00:05:33,854 - bot.py - MainThread - INFO : Console logger created.
+2021-03-19 00:06:30,953 - bot.py - IO - INFO : Initiating connection.
+2021-03-19 00:06:34,640 - bot.py - Executor - INFO : Joining #legion.
+2021-03-19 00:06:35,642 - bot.py - Executor - INFO : Joining #linux.
+2021-03-19 00:06:36,644 - bot.py - Executor - INFO : Joining #deadforest.
+2021-03-19 00:06:37,645 - bot.py - Executor - INFO : Joining #help.
+2021-03-19 00:06:38,647 - bot.py - Executor - INFO : Joining #python.
+2021-03-19 00:06:39,649 - bot.py - Executor - INFO : Joining #AnonOps.
+2021-03-19 00:06:41,856 - bot.py - Executor - INFO : No user an0n logged in.
+2021-03-19 00:06:43,859 - bot.py - Executor - INFO : Adding fluffy all.times to bot ops
+2021-03-19 00:06:51,461 - weather.py - Executor - INFO : No Forecast.io API key recorded.
+2021-03-19 00:06:55,447 - util.py - Executor - INFO : http://c.xkcd.com/random/comic/: Not Found
+2021-03-19 00:06:55,448 - link.py - Executor - ERROR : Couldn't get random xkcd comic.
+2021-03-19 00:07:21,764 - link.py - Executor - INFO : Retrieving link for https://github.com/pooler/JMiner.
+2021-03-19 00:07:22,779 - link.py - Executor - INFO : No title element found.
+2021-03-19 00:09:25,428 - bot.py - MainThread - INFO : Caught KeyboardInterrupt. Shutting down.

@@ -1,0 +1,14 @@
+2021-03-18 23:57:28,554 - bot.py - MainThread - INFO : File logger created; saving logs to /home/gnunix/gorillabot/logs/2357_031821.log.
+2021-03-18 23:57:28,555 - bot.py - MainThread - INFO : Console logger created.
+2021-03-18 23:57:53,576 - bot.py - MainThread - INFO : File logger created; saving logs to /home/gnunix/gorillabot/logs/2357_031821.log.
+2021-03-18 23:57:53,576 - bot.py - MainThread - INFO : Console logger created.
+2021-03-18 23:57:57,854 - bot.py - IO - INFO : Initiating connection.
+2021-03-18 23:58:01,597 - bot.py - Executor - INFO : Joining #legion.
+2021-03-18 23:58:02,600 - bot.py - Executor - INFO : Joining #deadforest.
+2021-03-18 23:58:03,601 - bot.py - Executor - INFO : Joining #linux.
+2021-03-18 23:58:04,603 - bot.py - Executor - INFO : Joining #python.
+2021-03-18 23:58:06,815 - bot.py - Executor - INFO : Adding spewforth series.of.tubes to bot ops
+2021-03-18 23:58:08,818 - bot.py - Executor - INFO : No user floof logged in.
+2021-03-18 23:59:17,251 - util.py - Executor - INFO : http://c.xkcd.com/random/comic/: Not Found
+2021-03-18 23:59:17,251 - link.py - Executor - ERROR : Couldn't get random xkcd comic.
+2021-03-18 23:59:39,299 - bot.py - MainThread - INFO : Caught KeyboardInterrupt. Shutting down.

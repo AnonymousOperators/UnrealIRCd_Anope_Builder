@@ -1,0 +1,10 @@
+2021-03-19 02:29:18,781 - bot.py - MainThread - INFO : File logger created; saving logs to /home/gnunix/gorillabot/logs/0229_031921.log.
+2021-03-19 02:29:18,782 - bot.py - MainThread - INFO : Console logger created.
+2021-03-19 02:29:51,171 - bot.py - IO - INFO : Initiating connection.
+2021-03-19 02:29:54,665 - bot.py - Executor - INFO : Joining #legion.
+2021-03-19 02:29:55,666 - bot.py - Executor - INFO : Joining #deadforest.
+2021-03-19 02:29:56,668 - bot.py - Executor - INFO : Joining #anonops.
+2021-03-19 02:29:57,670 - bot.py - Executor - INFO : Joining #gnu.
+2021-03-19 02:29:59,878 - bot.py - Executor - INFO : Adding spewforth series.of.tubes to bot ops
+2021-03-19 02:30:01,881 - bot.py - Executor - INFO : Adding fluffy all.times to bot ops
+2021-03-19 02:31:09,915 - bot.py - MainThread - INFO : Caught KeyboardInterrupt. Shutting down.

@@ -1,0 +1,4 @@
+2021-03-19 02:28:44,758 - bot.py - MainThread - INFO : File logger created; saving logs to /home/gnunix/gorillabot/logs/0228_031921.log.
+2021-03-19 02:28:44,758 - bot.py - MainThread - INFO : Console logger created.
+2021-03-19 02:29:15,737 - bot.py - MainThread - INFO : Caught KeyboardInterrupt. Shutting down.
+2021-03-19 02:29:15,739 - bot.py - IO - INFO : Initiating connection.

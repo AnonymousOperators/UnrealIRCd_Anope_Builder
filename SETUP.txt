@@ -24,6 +24,9 @@
 apt update --fix-missing; apt -y upgrade;
 # Install dependencies
 apt -y install nginx git dnsutils libssl1.1 r-cran-pkgmaker certbot sudo  libssl-dev python3-pip libxslt-dev libvorbis-dev
+sudo apt-get install build-essential python3-dev libffi-dev \
+  python-pip python-setuptools sqlite3 \
+  libssl-dev python-virtualenv libjpeg-dev libxslt1-dev
 
 cd /home
 mkdir network 
@@ -77,6 +80,13 @@ systemctl restart nginx;
 # SSL test
 certbot certonly --agree-tos --email anonymousoperators@tutanota.com --webroot -w /var/lib/letsencrypt/ -d anonymousoperators.com -d www.anonymousoperators.com;
 
+
+
+####################
+# UnrealIRCd Setup #
+####################
+
+
 # remove the old conf, mv the new conf, rename it
 rm -rf /etc/nginx/sites-available/anonymousoperators.com;
 mv /home/Our_VPS/letsencrypt/new-anonymousoperators.com /etc/nginx/sites-available/;
@@ -94,11 +104,30 @@ mv /home/Our_VPS/letsencrypt/certbot /etc/cron.d/;
 certbot renew --dry-run;
 
 
-#Now your got your domain setup with ssl, nginx is installed. Let's setup IRC.
+####################
+# Nodejs NPM Setup #
+####################
+
+sudo apt -y install curl
+
+curl -L https://deb.nodesource.com/setup_15.x | sudo -E bash -
+sudo apt -y install nodejs
+
+#test
+
+node --version
+
+npm --version
 
 
+# You need NPM for matrix-irc-bridge, and sync
 
+##############
+# Sync Setup #
+##############
 
+cd /home/network
+git clone https://github.com/wetfish/sync.git
 
 #################
 # Icecast Setup #

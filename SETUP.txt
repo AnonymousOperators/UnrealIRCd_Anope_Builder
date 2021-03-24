@@ -122,12 +122,44 @@ npm --version
 
 # You need NPM for matrix-irc-bridge, and sync
 
-##############
-# Sync Setup #
-##############
+########################
+# Matrix-Synapse Setup #
+########################
+
+# https://upcloud.com/community/tutorials/install-matrix-synapse/
+
+
 
 cd /home/network
-git clone https://github.com/wetfish/sync.git
+mkdir -p ~/synapse
+virtualenv -p python3 ~/synapse/env
+source ~/synapse/env/bin/activate
+
+pip install --upgrade pip virtualenv six packaging appdirs
+
+pip install --upgrade setuptools
+pip install matrix-synapse
+
+
+#Before Synapse can be started, you will need to generate a configuration file 
+#that defines the server settings.
+
+#Run the following commands in your Synapse virtual environment. 
+#Replace the server name matrix.example.com with your own domain, 
+#but note that the name cannot be changed later without reinstalling the home server.
+
+#Also, choose whether you wish to allow Synapse to report statistics by entering either --report-stats=yes or no.
+
+
+source ~/synapse/env/bin/activate
+pip install -U matrix-synapse
+cd ~/synapse
+python -m synapse.app.homeserver \
+  --server-name matrix.example.com \
+  --config-path homeserver.yaml \
+  --generate-config \
+  --report-stats=yes|no
+
 
 #################
 # Icecast Setup #

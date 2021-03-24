@@ -9,18 +9,26 @@
 # Do not do this as root, it will mess up permissions and be a pain in the ass.
 # Run with sudo as a user.
 
-# We will compile Unrealircd and Anope, then you can move the unrealircd.conf and services.conf files
-# to their respective directories, and it will work. 
+# This guide has been broken down into sections incase you only want to build certain things, rather than the entire stack.
+# You may see repeats of "wgets" and "apt installs" in those sections
+
+
+
+
+###########################
+#      Basic Setup        #
+# Installing Dependencies #
+###########################
 
 # Let's update our shit
 apt update --fix-missing; apt -y upgrade;
-# let's install the first necessary basics r-cran-pkgmaker is for gmake; libssl-dev for ssl
-apt -y install nginx git dnsutils libssl1.1 r-cran-pkgmaker certbot sudo  libssl-dev python3-pip;
+# Install dependencies
+apt -y install nginx git dnsutils libssl1.1 r-cran-pkgmaker certbot sudo  libssl-dev python3-pip libxslt-dev libvorbis-dev
 
 cd /home
-mkdir network #This is where we will compile and store our programs (unrealircd, etc)
+mkdir network 
+#This is where we will compile and store our programs (unrealircd, etc)
 cd network
-
 
 #Grab source code for Unrealircd and Anope. The rest are extras
 # Make sure you git these clones 
@@ -30,8 +38,16 @@ git clone https://github.com/AnonymousOperators/Our_VPS.git
 
 git clone https://github.com/matrix-org/matrix-appservice-irc
 
-wget downloads.xiph.org/releases/icecast/icecast-2.4.4.tar.gz
+wget https://downloads.xiph.org/releases/icecast/icecast-2.4.4.tar.gz
 
+
+#############
+# SSL Setup #
+#############
+
+# We wish to do this BEFORE creating our IRC/html
+# Will make life EAISER
+# If we setup SSL first, everything will use it later by DEFAULT
 
 # Let's create a SSL certificate, will take a while
 openssl dhparam -out /etc/ssl/certs/dhparam.pem 4096;
@@ -82,4 +98,29 @@ certbot renew --dry-run;
 
 
 
-BOT ADD FreedomFighter FreedomFighter services.legion.network The Freedom Fighter Bot
+
+
+#################
+# Icecast Setup #
+#################
+
+sudo apt -y install libxslt-dev
+sudo apt -y install libvorbis-dev
+
+wget https://downloads.xiph.org/releases/icecast/icecast-2.4.4.tar.gz
+
+tar -xvf icecast-2.4.4.tar.gz
+
+cd icecast-2.4.4
+
+./configure
+make
+sudo make install
+
+
+# If this worked, you will see a file called icecast.xml inside /usr/local/etc/
+cat /usr/local/etc/icecast.xml 
+
+
+
+#BOT ADD FreedomFighter FreedomFighter services.legion.network The Freedom Fighter Bot
